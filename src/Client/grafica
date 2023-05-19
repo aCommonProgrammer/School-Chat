@@ -34,7 +34,19 @@ public class ChatWindow extends JFrame {
         messageField = new JTextField();
         bottomPanel.add(messageField, BorderLayout.CENTER);
 
-        JButton sendButton = new JButton(new ImageIcon("invio.jpg"));
+        ImageIcon invio = new ImageIcon("invio.png");
+        JButton sendButton = new JButton()
+        {
+            //Metodo che permette di disegnare sui componenti grafici
+            protected void paintComponent(Graphics g)
+            {
+                //Passaggio dell'immagine all'oggetto Graphics con riadattamento delle dimensioni a quelle della finestra
+                g.drawImage(invio.getImage(), 0, 0, getSize().width, getSize().height, null);
+                //Passaggio dell'oggetto Graphics al pannello per il disegno dell'immagine
+                super.paintComponent(g);
+            }};
+        sendButton.setIcon(invio);
+        sendButton.setBackground(Color.white);
         sendButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 invia();
@@ -48,12 +60,12 @@ public class ChatWindow extends JFrame {
     private void invia() {
         String message = messageField.getText();
         if (!message.isEmpty()) {
-            chatArea.append("Me: " + message + "\n");
+            chatArea.append("Io: " + message + "\n");
             messageField.setText("");
         }
     }
     public static void main(String[] args) {
-                ChatWindow chatWindow = new ChatWindow();
-                chatWindow.setVisible(true);
+        ChatWindow chatWindow = new ChatWindow();
+        chatWindow.setVisible(true);
     }
 }
