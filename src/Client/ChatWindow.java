@@ -1,8 +1,9 @@
+package Client;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
 public class ChatWindow extends JFrame {
     private JTextArea chatArea;
@@ -35,16 +36,7 @@ public class ChatWindow extends JFrame {
         bottomPanel.add(messageField, BorderLayout.CENTER);
 
         ImageIcon invio = new ImageIcon("invio.png");
-        JButton sendButton = new JButton()
-        {
-            //Metodo che permette di disegnare sui componenti grafici
-            protected void paintComponent(Graphics g)
-            {
-                //Passaggio dell'immagine all'oggetto Graphics con riadattamento delle dimensioni a quelle della finestra
-                g.drawImage(invio.getImage(), 0, 0, getSize().width, getSize().height, null);
-                //Passaggio dell'oggetto Graphics al pannello per il disegno dell'immagine
-                super.paintComponent(g);
-            }};
+        JButton sendButton = new JButton();
         sendButton.setIcon(invio);
         sendButton.setBackground(Color.white);
         sendButton.addActionListener(new ActionListener() {
@@ -55,6 +47,8 @@ public class ChatWindow extends JFrame {
         bottomPanel.add(sendButton, BorderLayout.EAST);
 
         add(bottomPanel, BorderLayout.SOUTH);
+
+        setVisible(true);
     }
 
     private void invia() {
@@ -62,10 +56,7 @@ public class ChatWindow extends JFrame {
         if (!message.isEmpty()) {
             chatArea.append("Io: " + message + "\n");
             messageField.setText("");
+
         }
-    }
-    public static void main(String[] args) {
-        ChatWindow chatWindow = new ChatWindow();
-        chatWindow.setVisible(true);
     }
 }

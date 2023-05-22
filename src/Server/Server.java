@@ -5,12 +5,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Vector;
 
 public class Server
 {
-
-    static final String dirPath = "SchoolWhatsappServer/Files/"; //Directory dove vengono memorizzati i file del server
     int port; //porta sulla quale viene aperto il servizio (la porta viene impostata nel costruttore)
 
     ServerSocket serverSocket;
@@ -23,7 +22,7 @@ public class Server
 
     Server(int port) throws Exception //Apre il server e avvia un thread che accetta le connessioni dei vari client
     {
-        boolean r = new File(dirPath).mkdir(); //crea la cartella per i file del server
+        boolean r = new File(Main.dirPath).mkdir(); //crea la cartella per i file del server
         if(!r)
             throw new Exception("Impossible to create the directory for the server files");
 
@@ -133,15 +132,53 @@ public class Server
         }
     }
 
-    public ClientSocket cercaUtenteConnesso(String numeroTelefonico)
-    {
-        for (int cont = 0; cont < nConnessioni; cont++)
-        {
+    public ClientSocket cercaUtenteConnesso(String numeroTelefonico) {
+        for (int cont = 0; cont < nConnessioni; cont++) {
             if (clientSockets.elementAt(cont).utente.getNumeroTelefonico().equals(numeroTelefonico))
                 return clientSockets.elementAt(cont);
         }
         return null;
     }
 
+}
 
+class PacchettoS
+{
+    String testo;
+    String numeroMittente;
+    int codice;
+
+    PacchettoS (String numeroMittente, String testo, int codice)
+    {
+        this.testo = testo;
+        this.codice = codice;
+    }
+}
+
+class PacchettoC
+{
+    String nomeUtente;
+    String password;
+    String numeroDestinatario;
+    String testo;
+    String dataInvio;
+    int codice;
+
+    PacchettoC (String nomeUtente, String password, String numeroDestinatario, String testo, int codice)
+    {
+        this.nomeUtente = nomeUtente;
+        this.password = password;
+        this.numeroDestinatario = numeroDestinatario;
+        this.testo = testo;
+        this.codice = codice;
+    }
+}
+
+class ClientSocket //Classe per la gestione dello stream con il client e l'autenticazione
+{
+    Socket socket;
+    ObjectInputStream inStream;
+    ObjectOutputStream outStream;
+    boolean autenticato = false;
+    public Utente utente = null;
 }
