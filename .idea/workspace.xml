@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8eaf31d6-5f67-4919-a0fb-10401baf4b17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/GestoreUtenti.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/OptionFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PacchettoC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PacchettoS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/grafica" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ChatWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ClientSocket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/GestoreUtenti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/GestoreUtenti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/PacchettoC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/PacchettoS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Utente.java" beforeDir="false" />
-    </list>
+    <list default="true" id="8eaf31d6-5f67-4919-a0fb-10401baf4b17" name="Changes" comment="Riorganizazzione delle classi e inizio del codice per il client" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +61,14 @@
       <option name="presentableId" value="Default" />
       <updated>1684076755157</updated>
     </task>
+    <task id="LOCAL-00001" summary="Riorganizazzione delle classi e inizio del codice per il client">
+      <created>1684787749316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684787749316</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Riorganizazzione delle classi e inizio del codice per il client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Riorganizazzione delle classi e inizio del codice per il client" />
   </component>
 </project>
